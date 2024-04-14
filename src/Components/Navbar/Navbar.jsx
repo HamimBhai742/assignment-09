@@ -1,6 +1,19 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../AuthProvider/AuthProvider";
 
 const Navbar = () => {
+    const { user, logOut } = useContext(AuthContext)
+
+    const handelSingOutBtn = () => {
+        logOut()
+            .then(() => {
+                console.log('Log Out Successfull');
+            })
+            .catch(error => console.log(error))
+    }
+
+    console.log();
     return (
         <div>
             <div className="navbar bg-base-100">
@@ -12,25 +25,25 @@ const Navbar = () => {
                         <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                             <NavLink to='/'>Home</NavLink>
                             <NavLink to='/about'>About</NavLink>
-                            <NavLink to='/profile'>Profile</NavLink>
-                            <NavLink to='/updateprofile'>Update Profile</NavLink>
+                            {user && <NavLink to='/profile'>Profile</NavLink>}
+                            {user && <NavLink to='/updateprofile'>Update Profile</NavLink>}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-4xl font-bold">SharpLaunch</a>
+                    <a className="btn btn-ghost text-4xl font-bold font-poppins">PROLOGIS</a>
                 </div>
                 <div className="navbar-center hidden lg:flex ">
                     <ul className="menu menu-horizontal gap-5 items-center text-lg font-medium">
                         <NavLink to='/'>Home</NavLink>
                         <NavLink to='/about'>About</NavLink>
-                        <NavLink to='/profile'>Profile</NavLink>
-                        <NavLink to='/updateprofile'>Update Profile</NavLink>
+                        {user && <NavLink to='/profile'>Profile</NavLink>}
+                        {user && <NavLink to='/updateprofile'>Update Profile</NavLink>}
                     </ul>
                 </div>
-                <div className="navbar-end gap-5">
-                    <div>
-                        <img className="w-12 rounded-full" src="/public/360_F_553796090_XHrE6R9jwmBJUMo9HKl41hyHJ5gqt9oz.jpg" alt="" />
+                <div className="navbar-end gap-5 font-roboto">
+                    <div  className="lg:tooltip" data-tip={user && user.displayName}>
+                        <img className="w-14 h-14 rounded-full" src={user? user.photoURL:`/public/360_F_553796090_XHrE6R9jwmBJUMo9HKl41hyHJ5gqt9oz.jpg`} alt="" />
                     </div>
-                    <Link to='/login' className="btn btn-primary text-xl">Login</Link>
+                    <Link onClick={handelSingOutBtn} to='/login' className={`btn font-roboto font-medium text-white  text-lg ${user ? 'bg-[#23BE0A]':'bg-[#59C6D2]'}`}>{user ? 'Log Out' : 'Login'}</Link>
                 </div>
             </div>
         </div>

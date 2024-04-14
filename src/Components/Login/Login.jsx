@@ -3,9 +3,12 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { IoIosEye, IoIosEyeOff } from "react-icons/io";
 import { FaGithub, FaGoogle } from 'react-icons/fa';
 import { AuthContext } from '../AuthProvider/AuthProvider';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const Login = () => {
     const [showPassword, setShowPassword] = useState(false)
     const loction = useLocation()
+    const [errors, setError] = useState('')
     console.log(loction);
     const { handelLoginBtn, singInWithPopUp, user, singInWithGitHubPopup } = useContext(AuthContext)
     const handlePasswordShowBtn = () => {
@@ -16,14 +19,17 @@ const Login = () => {
 
     const handelLoginSubmitForm = e => {
         e.preventDefault()
-        const email = e.target.email.value
+        const email = e.target.email.value       
         const password = e.target.password.value
         handelLoginBtn(email, password)
             .then(r => {
                 console.log(r.user);
                 navigate(loction?.state ? loction.state : '/')
             })
-            .catch(error => console.log(error))
+            .catch(error => {
+                setError('Incorrect password')
+                toast.error("Incorrect password")
+            })
     }
 
     const loginWithGoogle = () => {
@@ -53,30 +59,33 @@ const Login = () => {
                         <form onSubmit={handelLoginSubmitForm} className="card-body">
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text">Email</span>
+                                    <span className="label-text  text-xl font-poppins text-[#403F3F] font-semibold">Email</span>
                                 </label>
-                                <input name='email' type="email" placeholder="Enter you email" className="input input-bordered" required />
+                                <input name='email' type="email" placeholder="Enter your email" className="input font-poppins input-bordered" required />
                             </div>
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text">Password</span>
+                                    <span className="label-text  text-xl font-poppins text-[#403F3F] font-semibold">Password</span>
                                 </label>
                                 <label className="label relative">
-                                    <input name='password' type={showPassword ? 'text' : 'password'} placeholder="Enter your password" className="input  w-[552px]  input-bordered" required />
+                                    <input name='password' type={showPassword ? 'text' : 'password'} placeholder="Enter your password" className="input font-poppins  w-[552px]  input-bordered" required />
                                     <span className='absolute text-xl top-6 right-5' onClick={handlePasswordShowBtn}>{showPassword ? <IoIosEyeOff /> : <IoIosEye />}</span>
                                 </label>
                                 <label className="label">
-                                    <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
+                                    <a href="#" className=" link link-hover font-poppins font-medium">Forgot password?</a>
                                 </label>
                             </div>
+
+                            {errors && <p className='text-[red] font-poppins'>{errors}</p>}
+
                             <div className="form-control mt-6">
-                                <input type="submit" className="btn btn-primary font-semibold text-lg" value="Login" />
+                                <input type="submit" className="btn btn-primary font-semibold text-xl font-poppins" value="Login" />
                             </div>
-                            <p>Don't have an account? <Link className='text-blue-500 font-medium' to='/register'>Register</Link></p>
+                            <p className='text-[#706F6F] font-poppins font-semibold'>Don't have an account? <Link className='text-[#F75B5F]' to='/register'>Register</Link></p>
                         </form>
                         <div className="divider px-7 -mt-6">OR</div>
                         <div>
-                            <div onClick={loginWithGoogle} className='border-2 rounded-xl p-3 flex gap-3 items-center w-1/2 mx-auto'>
+                            <div onClick={loginWithGoogle} className='border-2 border-[#328EFF48] text-[#328EFF] rounded-xl p-3 flex gap-3 items-center w-1/2 mx-auto'>
                                 <span className=' text-xl'><FaGoogle></FaGoogle></span>
                                 <span className='text-lg font-semibold'>Login with Google</span>
                             </div>
@@ -88,6 +97,7 @@ const Login = () => {
                     </div>
                 </div>
             </div>
+            <ToastContainer></ToastContainer>
         </div>
     );
 };

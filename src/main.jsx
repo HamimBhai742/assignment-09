@@ -15,6 +15,7 @@ import PrivateRouter from './Components/PrivateRouter/PrivateRouter';
 import Home from './Components/Home/Home';
 import ViewProperty from './Components/Home/ViewProperty';
 import Error from './Components/Error/Error';
+import UpdateProfile from './Components/UpdateProfile/UpdateProfile';
 
 const router = createBrowserRouter([
   {
@@ -47,6 +48,10 @@ const router = createBrowserRouter([
         path: '/view/:id',
         element: <PrivateRouter><ViewProperty></ViewProperty></PrivateRouter>,
         loader: () => fetch('/Industrial.json')
+      },
+      {
+        path:'/updateProfile',
+        element:<UpdateProfile></UpdateProfile>
       }
     ]
   },

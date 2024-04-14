@@ -30,6 +30,9 @@ const AuthProvider = ({ children }) => {
         setLoder(true)
         return signInWithPopup(auth, gitHubProvider)
     }
+    // const updateProfile=()=>{
+        
+    // }
 
     const logOut = () => {
         return signOut(auth)

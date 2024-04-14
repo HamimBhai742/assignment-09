@@ -22,9 +22,25 @@ const Register = () => {
         const email = e.target.email.value
         const photo = e.target.photo.value
         const password = e.target.password.value
-        console.log(name, email, password, photo);
+        const cheakbox=e.target.cheakbox.checked
+        console.log(name, email, password, photo,cheakbox);
         setError('')
-        if (password.length < 6) {
+        if (!/^[a-zA-Z]+(?:[\s'-][a-zA-Z]+)*$/.test(name)) {
+            setError('Please provide a valid name')
+            toast.error('Please provide a valid name')
+            return
+        }
+        else if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)) {
+            setError('Please provide a valid email')
+            toast.error('Please provide a valid email')
+            return
+        }
+        else if (!/^https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\/[-a-zA-Z0-9()@:%_\+.~#?&//=]*\.(?:jpg|jpeg|png|gif|bmp)$/.test(photo)) {
+            setError('Please provide a valid image url')
+            toast.error('Please provide a valid image url')
+            return
+        }
+        else if (password.length < 6) {
             setError('Password minimum 6 charecter')
             toast.error('Password minimum 6 charecter')
             return
@@ -32,6 +48,11 @@ const Register = () => {
         else if (!/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/.test(password)) {
             setError('Provide a strong password')
             toast.error('Provide a strong password')
+            return
+        }
+        else if(!cheakbox){
+            setError('Please accepted our terms and conditions')
+            toast.error('Please accepted our terms and conditions')
             return
         }
 
@@ -42,9 +63,10 @@ const Register = () => {
                     displayName: name, photoURL: photo
                 })
                 toast.success('Register Successful')
+                e.target.reset()
 
             })
-            .catch(error => console.log(error))
+            .catch(error => setError('Alreay register this email'))
     }
     console.log(handleSingUpBtn);
     return (
@@ -58,36 +80,40 @@ const Register = () => {
                         <form onSubmit={handelSubmitSingUpform} className="card-body">
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text">Name</span>
+                                    <span className="label-text text-xl font-poppins text-[#403F3F] font-semibold">Name</span>
                                 </label>
-                                <input name='name' type="text" placeholder="Enter you name" className="input input-bordered" required />
+                                <input name='name' type="text" placeholder="Enter your name" className="input  font-poppins input-bordered" required />
                             </div>
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text">Email</span>
+                                    <span className="label-text text-xl font-poppins text-[#403F3F] font-semibold">Email</span>
                                 </label>
-                                <input name='email' type="email" placeholder="Enter you email" className="input input-bordered" required />
+                                <input name='email' type="email" placeholder="Enter your email" className="input font-poppins input-bordered" required />
                             </div>
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text">Photo URL</span>
+                                    <span className="label-text text-xl font-poppins text-[#403F3F] font-semibold">Photo URL</span>
                                 </label>
-                                <input name='photo' type="text" placeholder="Enter you photo url" className="input input-bordered" required />
+                                <input name='photo' type="text" placeholder="Enter your photo url" className="input  font-poppins input-bordered" required />
                             </div>
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text">Password</span>
+                                    <span className="label-text text-xl font-poppins text-[#403F3F] font-semibold">Password</span>
                                 </label>
                                 <label className="label relative">
-                                    <input name='password' type={showPassword ? 'text' : 'password'} placeholder="Enter your password" className="input  w-[552px]  input-bordered" required />
+                                    <input name='password' type={showPassword ? 'text' : 'password'} placeholder="Enter your password" className="input  w-[552px] font-poppins  input-bordered" required />
                                     <span className='absolute text-xl top-6 right-5' onClick={handlePasswordShowBtn}>{showPassword ? <IoIosEyeOff /> : <IoIosEye />}</span>
                                 </label>
                             </div>
-                            {errors && <p className='text-[red]'>{errors}</p>}
-                            <div className="form-control mt-6">
-                                <input type="submit" className="btn btn-primary font-semibold text-lg" value="Register" />
+                            <div className='flex items-center'>
+                                <input className='h-4 w-4' type="checkbox" name="cheakbox" id="" />
+                                <span className='ml-2 font-poppins font-medium'>Accept Term & Conditions</span>
                             </div>
-                            <p>Already have an account? <Link className='text-blue-500 font-medium' to='/login'>Login</Link></p>
+                            {errors && <p className='text-[red] font-poppins'>{errors}</p>}
+                            <div className="form-control mt-6">
+                                <input type="submit" className="btn btn-primary font-semibold text-xl font-poppins" value="Register" />
+                            </div>
+                            <p className='text-[#706F6F] font-poppins font-semibold'>Already have an account? <Link className='text-[#F75B5F]' to='/login'>Login</Link></p>
                         </form>
                         <ToastContainer></ToastContainer>
                     </div>

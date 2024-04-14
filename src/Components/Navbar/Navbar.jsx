@@ -32,7 +32,7 @@ const Navbar = () => {
                     <a className="btn btn-ghost text-4xl font-bold font-poppins">PROLOGIS</a>
                 </div>
                 <div className="navbar-center hidden lg:flex ">
-                    <ul className="menu menu-horizontal gap-5 items-center text-lg font-medium">
+                    <ul className="menu menu-horizontal gap-5 items-center text-lg font-medium font-roboto text-[#706F6F]">
                         <NavLink to='/'>Home</NavLink>
                         <NavLink to='/about'>About</NavLink>
                         {user && <NavLink to='/profile'>Profile</NavLink>}
@@ -43,7 +43,7 @@ const Navbar = () => {
                     <div  className="lg:tooltip" data-tip={user && user.displayName}>
                         <img className="w-14 h-14 rounded-full" src={user? user.photoURL:`/public/360_F_553796090_XHrE6R9jwmBJUMo9HKl41hyHJ5gqt9oz.jpg`} alt="" />
                     </div>
-                    <Link onClick={handelSingOutBtn} to='/login' className={`btn font-roboto font-medium text-white  text-lg ${user ? 'bg-[#23BE0A]':'bg-[#59C6D2]'}`}>{user ? 'Log Out' : 'Login'}</Link>
+                    <Link onClick={handelSingOutBtn} to='/login' className={`btn font-roboto font-medium text-white bg-[#59C6D2] text-lg`}>{user ? 'Log Out' : 'Login'}</Link>
                 </div>
             </div>
         </div>

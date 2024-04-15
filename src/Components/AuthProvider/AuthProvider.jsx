@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword, GithubAuthProvider, signInWithPopup, signOut, getAuth, signInWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged } from "firebase/auth";
+import { createUserWithEmailAndPassword, GithubAuthProvider, signInWithPopup, signOut, getAuth, signInWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, updateProfile } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import app from "../../fire-base-init.js/Fire-Base-Init";
 
@@ -16,6 +16,13 @@ const AuthProvider = ({ children }) => {
         return createUserWithEmailAndPassword(auth, email, password)
     }
 
+    const updateUserProfile = (name, photo) => {
+        updateProfile(auth.currentUser, {
+            displayName: name,
+            photoURL: photo
+        })
+       
+    }
     const handelLoginBtn = (email, password) => {
         setLoder(true)
         return signInWithEmailAndPassword(auth, email, password)
@@ -31,7 +38,7 @@ const AuthProvider = ({ children }) => {
         return signInWithPopup(auth, gitHubProvider)
     }
     // const updateProfile=()=>{
-        
+
     // }
 
     const logOut = () => {
@@ -56,7 +63,8 @@ const AuthProvider = ({ children }) => {
         user,
         logOut,
         singInWithGitHubPopup,
-        loder
+        loder,
+        updateUserProfile
     }
     return (
         <div>

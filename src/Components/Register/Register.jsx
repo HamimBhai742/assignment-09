@@ -12,7 +12,7 @@ const Register = () => {
     const [showPassword, setShowPassword] = useState(false)
     const [errors, setError] = useState('')
 
-    const { handleSingUpBtn } = useContext(AuthContext)
+    const { handleSingUpBtn, logOut, updateUserProfile } = useContext(AuthContext)
     const handlePasswordShowBtn = () => {
         setShowPassword(!showPassword)
         console.log(showPassword);
@@ -59,12 +59,10 @@ const Register = () => {
 
         handleSingUpBtn(email, password)
             .then(r => {
-                console.log(r.user);
-                updateProfile(r.user, {
-                    displayName: name, photoURL: photo
-                })
+                updateUserProfile(name, photo)
                 toast.success('Register Successful')
                 e.target.reset()
+                logOut()
 
             })
             .catch(error => {

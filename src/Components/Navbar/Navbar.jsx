@@ -25,8 +25,8 @@ const Navbar = () => {
                         <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                             <NavLink to='/'>Home</NavLink>
                             <NavLink to='/about'>About</NavLink>
-                            {user && <NavLink to='/profile'>Profile</NavLink>}
                             {user && <NavLink to='/updateprofile'>Update Profile</NavLink>}
+                            <NavLink to='/contact'>Contact Us</NavLink>
                         </ul>
                     </div>
                     <div>
@@ -37,8 +37,8 @@ const Navbar = () => {
                     <ul className="menu menu-horizontal gap-5 items-center text-lg font-medium font-roboto text-[#706F6F]">
                         <NavLink to='/'>Home</NavLink>
                         <NavLink to='/about'>About</NavLink>
-                        {user && <NavLink to='/profile'>Profile</NavLink>}
                         {user && <NavLink to='/updateprofile'>Update Profile</NavLink>}
+                        <NavLink to='/contact'>Contact Us</NavLink>
                     </ul>
                 </div>
                 <div className="navbar-end gap-5 font-roboto">

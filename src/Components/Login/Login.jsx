@@ -5,6 +5,7 @@ import { FaGithub, FaGoogle } from 'react-icons/fa';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Helmet } from 'react-helmet-async';
 const Login = () => {
     const [showPassword, setShowPassword] = useState(false)
     const loction = useLocation()
@@ -50,6 +51,9 @@ const Login = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Login</title>
+            </Helmet>
             <div className="hero min-h-screen bg-base-200 rounded-xl">
                 <div className="hero-content flex-col lg:flex-col">
                     <div className="text-center lg:text-left">

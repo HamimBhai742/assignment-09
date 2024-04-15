@@ -4,6 +4,7 @@ import app from '../../fire-base-init.js/Fire-Base-Init';
 import { update } from 'firebase/database';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import firebase from 'firebase/compat/app';
+import { Helmet } from 'react-helmet-async';
 
 const UpdateProfile = () => {
 
@@ -33,6 +34,7 @@ const UpdateProfile = () => {
     return (
         <div>
             <form onSubmit={handelUpdateForm}>
+                <Helmet><title>Update Profile</title></Helmet>
                 <div className="form-control">
                     <label className="label">
                         <span className="label-text text-xl font-poppins text-[#403F3F] font-semibold">Name</span>

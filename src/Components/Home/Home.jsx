@@ -2,12 +2,16 @@
 import { useLoaderData } from 'react-router-dom';
 import Navbar from '../Navbar/Navbar';
 import IndustrialData from './IndustrialData';
+import { Helmet } from 'react-helmet-async';
 
 const Home = () => {
     const industrialData = useLoaderData()
     console.log(industrialData);
     return (
         <div>
+            <Helmet>
+                <title>Home</title>
+            </Helmet>
             <div className="carousel w-full h-[500px] rounded-3xl">
                 <div id="slide1" className="carousel-item relative w-full">
                     <img src="https://www.prologis.com/sites/corporate/files/images/2017/03/Bratislava-DC8_10.jpg" className="w-full" />

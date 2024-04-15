@@ -6,6 +6,7 @@ import { AuthContext } from '../AuthProvider/AuthProvider';
 import { updateProfile } from 'firebase/auth';
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Helmet } from 'react-helmet-async';
 
 const Register = () => {
     const [showPassword, setShowPassword] = useState(false)
@@ -22,8 +23,8 @@ const Register = () => {
         const email = e.target.email.value
         const photo = e.target.photo.value
         const password = e.target.password.value
-        const cheakbox=e.target.cheakbox.checked
-        console.log(name, email, password, photo,cheakbox);
+        const cheakbox = e.target.cheakbox.checked
+        console.log(name, email, password, photo, cheakbox);
         setError('')
         if (!/^[a-zA-Z]+(?:[\s'-][a-zA-Z]+)*$/.test(name)) {
             setError('Please provide a valid name')
@@ -50,7 +51,7 @@ const Register = () => {
             toast.error('Provide a strong password')
             return
         }
-        else if(!cheakbox){
+        else if (!cheakbox) {
             setError('Please accepted our terms and conditions')
             toast.error('Please accepted our terms and conditions')
             return
@@ -66,11 +67,15 @@ const Register = () => {
                 e.target.reset()
 
             })
-            .catch(error => setError('Alreay register this email'))
+            .catch(error => {
+                console.log(error);
+                setError('Alreay register this email')
+            })
     }
-    console.log(handleSingUpBtn);
+
     return (
         <div>
+            <Helmet><title>Register</title></Helmet>
             <div className="hero min-h-screen bg-base-200 rounded-xl">
                 <div className="hero-content flex-col lg:flex-col">
                     <div className="text-center lg:text-left">

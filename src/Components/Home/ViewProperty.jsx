@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { Link, useLoaderData, useLocation, useParams } from "react-router-dom";
 
 
@@ -12,6 +13,9 @@ const ViewProperty = () => {
     console.log(location);
     return (
         <div className="flex items-center gap-5">
+            <Helmet>
+                <title>View Property</title>
+            </Helmet>
             <div className=" rounded-2xl">
                 <img className="rounded-xl h-[450px]" src={findData.img} alt="" />
             </div>

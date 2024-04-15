@@ -3,6 +3,19 @@ import { useLoaderData } from 'react-router-dom';
 import Navbar from '../Navbar/Navbar';
 import IndustrialData from './IndustrialData';
 import { Helmet } from 'react-helmet-async';
+import React, { useRef, useState } from 'react';
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
+
+// import required modules
+import { Navigation, Pagination, Mousewheel, Keyboard } from 'swiper/modules';
+
 
 const Home = () => {
     const industrialData = useLoaderData()
@@ -48,7 +61,29 @@ const Home = () => {
                     industrialData.map(ind => <IndustrialData key={ind.id} ind={ind}></IndustrialData>)
                 }
             </div>
-        </div>
+            
+            <div className='my-8'>
+
+                <h3 className='font-roboto text-center text-3xl font-bold text-emerald-700'>HELPING OUR CUSTOMERS SUCCEED</h3>
+                <Swiper
+                    cssMode={true}
+                    navigation={false}
+                    pagination={true}
+                    mousewheel={true}
+                    keyboard={true}
+                    modules={[Navigation, Pagination, Mousewheel, Keyboard]}
+                    className="mySwiper"
+                >
+                    <SwiperSlide><div className='p-5'><img src="/cm1.png" alt="" /></div></SwiperSlide>
+                    <SwiperSlide><div className='p-5'><img src="/cm2.png" alt="" /></div></SwiperSlide>
+                    <SwiperSlide><div className='p-5'><img src="/cm3.png" alt="" /></div></SwiperSlide>
+                    <SwiperSlide><div className='p-5'><img src="/cm4.png" alt="" /></div></SwiperSlide>
+                    <SwiperSlide><div className='p-5'><img src="/cm5.png" alt="" /></div></SwiperSlide>
+                    
+                </Swiper>
+
+            </div>
+        </div >
     );
 };
 

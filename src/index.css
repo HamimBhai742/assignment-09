@@ -19,3 +19,9 @@
 .font-roboto {
     font-family: "Roboto", sans-serif;
 }
+
+
+.animate1{
+    animation: fadeInLeft;
+    animation-duration: 2s;
+}

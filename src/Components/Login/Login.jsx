@@ -20,14 +20,14 @@ const Login = () => {
 
     const handelLoginSubmitForm = e => {
         e.preventDefault()
-        const email = e.target.email.value       
+        const email = e.target.email.value
         const password = e.target.password.value
         setError('')
         handelLoginBtn(email, password)
             .then(r => {
                 console.log(r.user);
                 toast.success('Login Successful')
-                setTimeout(()=>{ navigate(loction?.state ? loction.state : '/')},2000)
+                setTimeout(() => { navigate(loction?.state ? loction.state : '/') }, 2000)
             })
             .catch(error => {
                 setError('Incorrect password or email')
@@ -39,6 +39,8 @@ const Login = () => {
         singInWithPopUp()
             .then(res => {
                 console.log(res.user);
+                toast.success('Google login Successful')
+                setTimeout(() => { navigate(loction?.state ? loction.state : '/') }, 2000)
             })
             .catch(error => console.log(error))
     }
@@ -47,6 +49,8 @@ const Login = () => {
         singInWithGitHubPopup()
             .then(r => {
                 console.log(r.user);
+                toast.success('GitHub login Successful')
+                setTimeout(() => { navigate(loction?.state ? loction.state : '/') }, 2000)
             })
             .catch(error => console.log(error))
     }

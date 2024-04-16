@@ -57,18 +57,21 @@ const Home = () => {
                 </div>
             </div>
 
-            <div className='grid grid-cols-3 mt-10 gap-3'>
-                {
-                    industrialData.map(ind => <IndustrialData key={ind.id} ind={ind}></IndustrialData>)
-                }
+            <div className='mt-10'>
+                <h3 className='font-roboto text-center text-3xl font-bold text-emerald-700'>Industrial Estated</h3>
+                <div className='grid grid-cols-3 gap-3'>
+                    {
+                        industrialData.map(ind => <IndustrialData key={ind.id} ind={ind}></IndustrialData>)
+                    }
+                </div>
             </div>
 
-            <div className='my-10 '>
-                <h3 className='font-roboto text-center text-3xl font-bold text-emerald-700'>WE WORK WITH</h3>
+            <div className='mt-16 '>
+                <h3 className='font-roboto text-center text-3xl font-bold text-emerald-700 my-4'>WE WORK WITH</h3>
                 <div className='flex gap-5'>
-                    <div className='bg-white shadow-lg max-w-[280px] p-5 text-center rounded-xl h-[330px]'>
+                    <div className='bg-white shadow-lg max-w-[280px] p-5 text-center rounded-xl h-[330px] animate2 animate-pulse'>
                         <div className='flex justify-center mt-2'>
-                            <img src="/public/sm1.png" alt="" />
+                            <img src="/sm1.png" alt="" />
                         </div>
                         <h4 className='font-roboto text-2xl font-semibold text-emerald-700'>CUSTOMERS</h4>
                         <p className='font-roboto my-3'>
@@ -77,9 +80,9 @@ const Home = () => {
                         <div className=''>
                             <p className='flex justify-center items-center text-sm gap-2 font-poppins text-emerald-700 font-semibold'>LEARN MORE <FaArrowRight></FaArrowRight></p></div>
                     </div>
-                    <div className='bg-white  shadow-lg max-w-[280px] p-5 text-center rounded-xl h-[330px]'>
+                    <div className='bg-white animate-pulse shadow-lg max-w-[280px] p-5 text-center rounded-xl h-[330px]'>
                         <div className='flex justify-center mt-1'>
-                            <img src="/public/sm2.png" alt="" />
+                            <img src="/sm2.png" alt="" />
                         </div>
                         <h4 className='font-roboto text-2xl font-semibold text-emerald-700 -mt-3'> BROKERS</h4>
                         <p className='font-roboto my-3'>
@@ -89,9 +92,9 @@ const Home = () => {
                             <p className='flex justify-center items-center text-sm gap-2 font-poppins text-emerald-700 font-semibold'>LEARN MORE <FaArrowRight></FaArrowRight></p>
                         </div>
                     </div>
-                    <div className='bg-white flex-grow-1 shadow-lg max-w-[280px] p-5 text-center rounded-xl h-[330px]'>
+                    <div className='bg-white animate-pulse flex-grow-1 shadow-lg max-w-[280px] p-5 text-center rounded-xl h-[330px]'>
                         <div className='flex justify-center'>
-                            <img src="/public/sm3.png" alt="" />
+                            <img src="/sm3.png" alt="" />
                         </div>
                         <h4 className='font-roboto text-2xl font-semibold text-emerald-700'> PROPERTY OWNERS</h4>
                         <p className='font-roboto my-3'>
@@ -101,9 +104,9 @@ const Home = () => {
                             <p className=' flex justify-center items-center text-sm gap-2 font-poppins text-emerald-700 font-semibold'>LEARN MORE <FaArrowRight></FaArrowRight></p>
                         </div>
                     </div>
-                    <div className='bg-white  shadow-lg max-w-[280px] p-5 text-center rounded-xl h-[330px]'>
+                    <div className='bg-white animate-pulse  shadow-lg max-w-[280px] p-5 text-center rounded-xl h-[330px]'>
                         <div className='flex justify-center '>
-                            <img src="/public/sm4.png" alt="" />
+                            <img src="/sm4.png" alt="" />
                         </div>
                         <h4 className='font-roboto text-2xl font-semibold text-emerald-700'>COMMUNITIES</h4>
                         <p className='font-roboto my-3'>
@@ -116,7 +119,7 @@ const Home = () => {
                 </div>
             </div>
 
-            <div className='my-8'>
+            <div className='mt-16'>
 
                 <h3 className='font-roboto text-center text-3xl font-bold text-emerald-700'>HELPING OUR CUSTOMERS SUCCEED</h3>
                 <Swiper

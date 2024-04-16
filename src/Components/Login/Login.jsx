@@ -22,14 +22,16 @@ const Login = () => {
         e.preventDefault()
         const email = e.target.email.value       
         const password = e.target.password.value
+        setError('')
         handelLoginBtn(email, password)
             .then(r => {
                 console.log(r.user);
-                navigate(loction?.state ? loction.state : '/')
+                toast.success('Login Successful')
+                setTimeout(()=>{ navigate(loction?.state ? loction.state : '/')},2000)
             })
             .catch(error => {
-                setError('Incorrect password')
-                toast.error("Incorrect password")
+                setError('Incorrect password or email')
+                toast.error("Incorrect password or email")
             })
     }
 

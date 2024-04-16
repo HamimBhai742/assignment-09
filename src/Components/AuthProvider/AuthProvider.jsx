@@ -17,11 +17,10 @@ const AuthProvider = ({ children }) => {
     }
 
     const updateUserProfile = (name, photo) => {
-        updateProfile(auth.currentUser, {
+        return updateProfile(auth.currentUser, {
             displayName: name,
             photoURL: photo
         })
-       
     }
     const handelLoginBtn = (email, password) => {
         setLoder(true)

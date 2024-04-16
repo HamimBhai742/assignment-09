@@ -62,7 +62,8 @@ const Register = () => {
                 updateUserProfile(name, photo)
                 toast.success('Register Successful')
                 e.target.reset()
-                logOut()
+                setTimeout(()=>{window.location.reload()},2000)
+                // logOut()
 
             })
             .catch(error => {

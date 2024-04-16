@@ -3,13 +3,13 @@ import { AuthContext } from '../AuthProvider/AuthProvider';
 import { Helmet } from 'react-helmet-async';
 
 const UpdateProfile = () => {
-    const { user, updateUserProfile } = useContext(AuthContext)
+    const { user } = useContext(AuthContext)
 
     // const handleUpdateProfile = () => {
-    //     updateUserProfile()
+    //     window.location.reload()
     // }
     return (
-        <div className='bg-cyan-100 max-w-[700px] p-5 mx-auto justify-around  rounded-xl flex'>
+        <div className='bg-rose-100  p-5 mx-auto rounded-xl flex flex-col gap-5 w-[800px]'>
             <Helmet>
                 <title>Update Profile</title>
             </Helmet>
@@ -22,8 +22,23 @@ const UpdateProfile = () => {
                 <p className='bg-white p-3 mb-3'><span className='text-lg'>Name:</span> {user.displayName}</p>
                 <p className='bg-white p-3 mb-3'><span className='text-lg'>Email:</span> {user.email}</p>
                 <p className='bg-white p-3 mb-3'><span className='text-lg'>URL:</span> {user.photoURL}</p>
-                <div className='ml-96'>
-                    <button className='btn bg-[#59C6D2] text-xl font-semibold font-poppins text-white'>Save</button>
+                <div className='ml-[670px]'>
+                    {/* <button className='btn bg-[#59C6D2] text-xl font-semibold font-poppins text-white'>Save</button> */}
+
+                    {/* The button to open modal */}
+                    <label htmlFor="my_modal_6" className='btn bg-[#59C6D2] text-xl font-semibold font-poppins text-white'>Save</label>
+
+                    {/* Put this part before </body> tag */}
+                    <input type="checkbox" id="my_modal_6" className="modal-toggle" />
+                    <div className="modal" role="dialog">
+                        <div className="modal-box">
+                            <h3 className="font-bold text-lg">Hello!</h3>
+                            <p className="py-4">Thank you for updating!</p>
+                            <div className="modal-action">
+                                <label htmlFor="my_modal_6" className="btn bg-emerald-500 text-white text-lg font-roboto ">ok</label>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 

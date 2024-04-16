@@ -15,6 +15,7 @@ import 'swiper/css/pagination';
 
 // import required modules
 import { Navigation, Pagination, Mousewheel, Keyboard } from 'swiper/modules';
+import { FaArrowRight } from 'react-icons/fa';
 
 
 const Home = () => {
@@ -61,7 +62,60 @@ const Home = () => {
                     industrialData.map(ind => <IndustrialData key={ind.id} ind={ind}></IndustrialData>)
                 }
             </div>
-            
+
+            <div className='my-10 '>
+                <h3 className='font-roboto text-center text-3xl font-bold text-emerald-700'>WE WORK WITH</h3>
+                <div className='flex gap-5'>
+                    <div className='bg-white shadow-lg max-w-[280px] p-5 text-center rounded-xl h-[330px]'>
+                        <div className='flex justify-center mt-2'>
+                            <img src="/public/sm1.png" alt="" />
+                        </div>
+                        <h4 className='font-roboto text-2xl font-semibold text-emerald-700'>CUSTOMERS</h4>
+                        <p className='font-roboto my-3'>
+                            Partnerships built at the local level are the key to helping us craft the custom your business needs to be more efficient.
+                        </p>
+                        <div className=''>
+                            <p className='flex justify-center items-center text-sm gap-2 font-poppins text-emerald-700 font-semibold'>LEARN MORE <FaArrowRight></FaArrowRight></p></div>
+                    </div>
+                    <div className='bg-white  shadow-lg max-w-[280px] p-5 text-center rounded-xl h-[330px]'>
+                        <div className='flex justify-center mt-1'>
+                            <img src="/public/sm2.png" alt="" />
+                        </div>
+                        <h4 className='font-roboto text-2xl font-semibold text-emerald-700 -mt-3'> BROKERS</h4>
+                        <p className='font-roboto my-3'>
+                            Relationships with real estate brokers that help bring success to their clients.
+                        </p>
+                        <div className='mt-9'>
+                            <p className='flex justify-center items-center text-sm gap-2 font-poppins text-emerald-700 font-semibold'>LEARN MORE <FaArrowRight></FaArrowRight></p>
+                        </div>
+                    </div>
+                    <div className='bg-white flex-grow-1 shadow-lg max-w-[280px] p-5 text-center rounded-xl h-[330px]'>
+                        <div className='flex justify-center'>
+                            <img src="/public/sm3.png" alt="" />
+                        </div>
+                        <h4 className='font-roboto text-2xl font-semibold text-emerald-700'> PROPERTY OWNERS</h4>
+                        <p className='font-roboto my-3'>
+                            We don't just build; we buy, too. We're always looking for property and buildings to purchase.
+                        </p>
+                        <div className='mt-9'>
+                            <p className=' flex justify-center items-center text-sm gap-2 font-poppins text-emerald-700 font-semibold'>LEARN MORE <FaArrowRight></FaArrowRight></p>
+                        </div>
+                    </div>
+                    <div className='bg-white  shadow-lg max-w-[280px] p-5 text-center rounded-xl h-[330px]'>
+                        <div className='flex justify-center '>
+                            <img src="/public/sm4.png" alt="" />
+                        </div>
+                        <h4 className='font-roboto text-2xl font-semibold text-emerald-700'>COMMUNITIES</h4>
+                        <p className='font-roboto my-3'>
+                            Initiatives that build stronger and public spaces to better the places we work and live.
+                        </p>
+                        <div className='mt-9'>
+                            <p className='flex mt-8 justify-center items-center text-sm gap-2 font-poppins text-emerald-700 font-semibold'>LEARN MORE <FaArrowRight></FaArrowRight></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div className='my-8'>
 
                 <h3 className='font-roboto text-center text-3xl font-bold text-emerald-700'>HELPING OUR CUSTOMERS SUCCEED</h3>
@@ -79,7 +133,7 @@ const Home = () => {
                     <SwiperSlide><div className='p-5'><img src="/cm3.png" alt="" /></div></SwiperSlide>
                     <SwiperSlide><div className='p-5'><img src="/cm4.png" alt="" /></div></SwiperSlide>
                     <SwiperSlide><div className='p-5'><img src="/cm5.png" alt="" /></div></SwiperSlide>
-                    
+
                 </Swiper>
 
             </div>

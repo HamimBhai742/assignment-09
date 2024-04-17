@@ -42,7 +42,7 @@ const Contact = () => {
                     </div>
                     <div>
                         <label><p className='-ml-64 mb-2'>Message*</p></label>
-                        <input className='h-[150px] w-80' type="textarea" name="" id="" required/>
+                        <textarea name="" id="" cols="42" rows="8"></textarea>
                     </div>
                     <div><button className='border-4 py-2 px-3  text-xl font-roboto text-blue-800 font-semibold'>Submit</button></div>
                 </div>

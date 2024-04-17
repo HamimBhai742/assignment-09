@@ -22,11 +22,11 @@ const UpdateProfile = () => {
             toast.error('Please provide a valid name')
             return
         }
-        // else if (!/^https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\/[-a-zA-Z0-9()@:%_\+.~#?&//=]*\.(?:jpg|jpeg|png|gif|bmp)$/.test(photo)) {
-        //     setError('Please provide a valid image url')
-        //     toast.error('Please provide a valid image url')
-        //     return
-        // }
+        else if (!/^https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\/[-a-zA-Z0-9()@:%_\+.~#?&//=]*\.(?:jpg|jpeg|png|gif|bmp)$/.test(photo)) {
+            setError('Please provide a valid image url')
+            toast.error('Please provide a valid image url')
+            return
+        }
         updateUserProfile(name, photo)
             .then(() => {
                 toast.success('Profile update Successful')

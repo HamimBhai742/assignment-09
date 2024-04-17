@@ -19,7 +19,7 @@ const IndustrialData = ({ ind }) => {
 
     useEffect(() => {
         AOS.init({
-            
+            disable:'mobile',
             duration:1000
         });
     }, [])

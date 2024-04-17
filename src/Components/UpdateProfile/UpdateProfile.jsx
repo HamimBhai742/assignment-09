@@ -36,7 +36,7 @@ const UpdateProfile = () => {
 
     }
     return (
-        <div className='flex items-center bg-cyan-100 p-5 rounded-xl justify-around'>
+        <div className='lg:flex items-center bg-cyan-100 p-5 rounded-xl justify-around max-sm:mx-3'>
             <Helmet>
                 <title>Update Profile</title>
             </Helmet>
@@ -54,7 +54,7 @@ const UpdateProfile = () => {
                 </div>
 
             </div>
-            <div className='w-[550px]'>
+            <div className='lg:w-[550px]'>
                 <form onSubmit={handleUpdateForm} className="card-body">
                     <div className="form-control">
                         <label className="label">

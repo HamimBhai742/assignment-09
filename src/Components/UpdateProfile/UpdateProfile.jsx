@@ -36,7 +36,7 @@ const UpdateProfile = () => {
 
     }
     return (
-        <div className='flex items-center bg-rose-100 p-5 rounded-xl justify-around'>
+        <div className='flex items-center bg-cyan-100 p-5 rounded-xl justify-around'>
             <Helmet>
                 <title>Update Profile</title>
             </Helmet>

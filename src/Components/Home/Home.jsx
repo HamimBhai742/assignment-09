@@ -71,9 +71,9 @@ const Home = () => {
 
             <div className='mt-16 '>
                 <h3 className='font-roboto text-center text-3xl font-bold text-emerald-700 my-4'>WE WORK WITH</h3>
-                <div className='flex gap-5'>
-                    <div className='bg-white shadow-lg max-w-[280px] p-5 text-center rounded-xl h-[330px] animate2 animate-pulse'>
-                        <div className='flex justify-center mt-2'>
+                <div className='flex gap-5' data-aos="fade-up-right" data-aos-offset="200" data-aos-duration="1000">
+                    <div className='bg-white shadow-lg max-w-[280px] p-5 text-center rounded-xl h-[330px] animate-pulse'>
+                        <div className='flex justify-center mt-2' data-aos="fade-zoom-in" data-aos-offset="300" data-aos-easing="ease-in-sine" data-aos-duration="600">
                             <img src="/sm1.png" alt="" />
                         </div>
                         <h4 className='font-roboto text-2xl font-semibold text-emerald-700'>CUSTOMERS</h4>

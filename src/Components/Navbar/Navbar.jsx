@@ -45,7 +45,7 @@ const Navbar = () => {
                     <div className="lg:tooltip" data-tip={user && user.displayName}>
                         <img className="w-14 h-14 rounded-full" src={user ? user.photoURL : '/360_F_553796090_XHrE6R9jwmBJUMo9HKl41hyHJ5gqt9oz.jpg'} alt="" />
                     </div>
-                    <Link onClick={handelSingOutBtn} to='/login' className={`btn font-roboto font-medium text-white bg-[#59C6D2] text-lg`}>{user ? 'Log Out' : 'Login'}</Link>
+                    <Link onClick={handelSingOutBtn} to='/login' className={`btn hover:bg-[#59C6D2CC] font-roboto font-medium text-white bg-[#59C6D2] text-lg`}>{user ? 'Log Out' : 'Login'}</Link>
                 </div>
             </div>
         </div>

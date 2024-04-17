@@ -10,23 +10,23 @@ const Contact = () => {
                 <title>Contact Us</title>
             </Helmet>
             <div className='pt-8 flex justify-around'>
-                <div className='bg-white p-8 shadow-lg w-64 text-center space-y-3'>
+                <div className='bg-white p-8 shadow-lg w-64 text-center space-y-3 animate-pulse'>
                     <span className='flex justify-center text-4xl text-[#59C6D2]'><FaMapMarkerAlt></FaMapMarkerAlt></span>
                     <h3 className='font-poppins text-xl font-bold'>OUR MAIN OFFICE</h3>
                     <p className='font-roboto'>SoHo 94 Broadway St New York, NY 1001</p>
                 </div>
-                <div className='bg-white p-8 shadow-lg w-64 text-center space-y-3'>
+                <div className='bg-white p-8 shadow-lg w-64 text-center space-y-3 animate-pulse'>
                     <span className='flex justify-center text-4xl text-[#59C6D2]'><FaPhoneAlt></FaPhoneAlt></span>
                     <h3 className='font-poppins text-xl font-bold'>PHONE NUMBER</h3>
                     <p className='font-roboto'>234-9876-5400
                         <br />123-4567 (Toll Free)</p>
                 </div>
-                <div className='bg-white p-8 shadow-lg w-64 text-center space-y-3'>
+                <div className='bg-white p-8 shadow-lg w-64 text-center space-y-3 animate-pulse'>
                     <span className='flex justify-center text-4xl text-[#59C6D2]'><FaFax></FaFax></span>
                     <h3 className='font-poppins text-xl font-bold'>FAX</h3>
                     <p className='font-roboto'>1-234-567-7603</p>
                 </div>
-                <div className='bg-white p-8 shadow-lg w-64 text-center space-y-3'>
+                <div className='bg-white p-8 shadow-lg w-64 text-center space-y-3 animate-pulse'>
                     <span className='flex justify-center text-4xl text-[#59C6D2]'><MdEmail></MdEmail></span>
                     <h3 className='font-poppins text-xl font-bold'>EMAIL</h3>
                     <p className='font-roboto'>hello@info.com</p>

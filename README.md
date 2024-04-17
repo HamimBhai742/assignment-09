@@ -1,5 +1,6 @@
 
 # Prologis
+
 ### 🔗 https://assignment-real-estated-09.netlify.app/
 
 
@@ -9,4 +10,11 @@
 - Responsive for mobile & desktop
 - Navbar & Footer incude this website
 - Two private route 
+
+
+## Package
+
+- AOS Package
+- Animate.css
+- Swiper slider
 

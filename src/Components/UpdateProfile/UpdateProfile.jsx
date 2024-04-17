@@ -49,7 +49,7 @@ const UpdateProfile = () => {
                 <div className='mt-3 font-poppins font-semibold text-center'>
                     <div><p><span className='text-lg'>Name:</span> {user.displayName}</p></div>
                     <div><p><span className='text-lg'>Email:</span> {user.email}</p></div>
-                    <div><p className='max-w-[500px]'><span className='text-lg'>URL:</span> <span>{user.photoURL}</span></p></div>
+                    <div><p className='max-w-[400px]'><span className='text-lg'>URL:</span> <span>{user.photoURL}</span></p></div>
                     
                 </div>
 
@@ -64,9 +64,9 @@ const UpdateProfile = () => {
                     </div>
                     <div className="form-control">
                         <label className="label">
-                            <span className="label-text  text-xl font-poppins text-[#403F3F] font-semibold">photoURL</span>
+                            <span className="label-text  text-xl font-poppins text-[#403F3F] font-semibold">Photo URL</span>
                         </label>
-                        <input type="text" name='photo' placeholder="photoURL" className="input input-bordered font-poppins" required />
+                        <input type="text" name='photo' placeholder="Photo Url" className="input input-bordered font-poppins" required />
                     </div>
                     {errors && <p className='text-[red] font-poppins'>{errors}</p>}
                     <div className="form-control mt-6">

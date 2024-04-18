@@ -75,12 +75,12 @@ const Register = () => {
     return (
         <div>
             <Helmet><title>Register</title></Helmet>
-            <div className="hero min-h-screen bg-base-200 rounded-xl max-sm:mx-3">
+            <div className="hero min-h-screen lg:bg-base-200 rounded-xl">
                 <div className="hero-content flex-col lg:flex-col">
                     <div className="text-center lg:text-left">
-                        <h1 className="text-5xl font-bold">Register now!</h1>
+                        <h1 className="md:text-5xl text-3xl font-bold font-roboto">Register now!</h1>
                     </div>
-                    <div className="card shrink-0 lg:w-[552px]  shadow-2xl bg-base-100 mt-3">
+                    <div className="card shrink-0 md:w-[552px]  shadow-2xl bg-base-100 mt-3">
                         <form onSubmit={handelSubmitSingUpform} className="card-body">
                             <div className="form-control">
                                 <label className="label">
@@ -105,7 +105,7 @@ const Register = () => {
                                     <span className="label-text text-xl font-poppins text-[#403F3F] font-semibold">Password</span>
                                 </label>
                                 <label className="label relative">
-                                    <input name='password' type={showPassword ? 'text' : 'password'} placeholder="Enter your password" className="input  lg:w-[552px] font-poppins w-full  input-bordered" required />
+                                    <input name='password' type={showPassword ? 'text' : 'password'} placeholder="Enter your password" className="input  md:w-[552px] font-poppins w-full  input-bordered" required />
                                     <span className='absolute text-xl top-6 right-5' onClick={handlePasswordShowBtn}>{showPassword ? <IoIosEyeOff /> : <IoIosEye />}</span>
                                 </label>
                             </div>

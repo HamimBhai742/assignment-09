@@ -12,7 +12,7 @@ const ViewProperty = () => {
     const location = useLocation()
     console.log(location);
     return (
-        <div className="lg:flex items-center gap-8 max-sm:mx-3">
+        <div className="flex items-center lg:gap-8 mx-3 flex-col max-sm:gap-5 mt-5 lg:flex-row md:mx-5 lg:mx-auto md:gap-6">
             <Helmet>
                 <title>View Property</title>
             </Helmet>

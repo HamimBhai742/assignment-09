@@ -26,7 +26,7 @@ const IndustrialData = ({ ind }) => {
 
     return (
         <div>
-            <div className="card card-compact w-96 bg-base-100 shadow-xl" >
+            <div className="card card-compact lg:w-96 bg-base-100 shadow-xl" >
                 <figure data-aos="fade-up" className="p-5 "><img src={img} className="h-[280px] rounded-xl" alt="Shoes" /></figure>
                 <div className="card-body -mt-3">
                     <h2 className=" card-title font-poppins" data-aos="fade-up-left">{estate_title}</h2>

@@ -26,7 +26,7 @@ const Home = () => {
             <Helmet>
                 <title>Home</title>
             </Helmet>
-            <div className="carousel w-full max-sm:h-[350px]  lg:h-[500px] rounded-3xl max-sm:mx-3">
+            <div className="carousel w-full max-sm:h-[350px]  lg:h-[500px] rounded-3xl max-sm:mx-3 md:mx-5 lg:mx-auto">
                 <div id="slide1" className="carousel-item relative w-full">
                     <img src="https://www.prologis.com/sites/corporate/files/images/2017/03/Bratislava-DC8_10.jpg" className="w-full max-sm:h-[350px] h-[500px]" />
                     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
@@ -62,7 +62,7 @@ const Home = () => {
 
             <div className='md:mt-10 mt-5 max-sm:px-3'>
                 <h3 className='font-roboto text-center text-2xl lg:text-3xl font-bold text-emerald-700 uppercase'>Industrial Estated</h3>
-                <div className='grid lg:grid-cols-3 md:grid-cols-2 gap-3'>
+                <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 mx-3 lg:gap-3 md:mx-10 lg:mx-auto md:gap-5'>
                     {
                         industrialData.map(ind => <IndustrialData key={ind.id} ind={ind}></IndustrialData>)
                     }
@@ -71,7 +71,7 @@ const Home = () => {
 
             <div className='mt-16'>
                 <h3 className='font-roboto text-center text-2xl lg:text-3xl font-bold text-emerald-700 my-4'>WE WORK WITH</h3>
-                <div className='flex gap-5 max-sm:flex-col max-sm:items-center max-sm:gap-8' data-aos="fade-up-right" data-aos-offset="200" data-aos-duration="1000">
+                <div className='md:grid md:grid-cols-2 lg:grid-cols-4 max-sm:flex md:gap-8 max-sm:flex-col max-sm:items-center max-sm:gap-8 md:mx-10 lg:mx-auto' data-aos="fade-up-right" data-aos-offset="200" data-aos-duration="1000">
                     <div className='bg-white shadow-lg max-w-[280px] p-5 text-center rounded-xl h-[330px] animate-pulse'>
                         <div className='flex justify-center mt-2' data-aos="fade-zoom-in" data-aos-offset="300" data-aos-easing="ease-in-sine" data-aos-duration="600">
                             <img src="/sm1.png" alt="" />
@@ -101,7 +101,7 @@ const Home = () => {
                         </div>
                         <h4 className='font-roboto text-2xl font-semibold text-emerald-700'> PROPERTY OWNERS</h4>
                         <p className='font-roboto my-3'>
-                            We don't just build; we buy, too. We're always looking for property and buildings to purchase.
+                            We don't just build. We're always looking for property and buildings to purchase.
                         </p>
                         <div className='mt-9'>
                             <p className=' flex justify-center items-center text-sm gap-2 font-poppins text-emerald-700 font-semibold'>LEARN MORE <FaArrowRight></FaArrowRight></p>

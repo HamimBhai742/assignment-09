@@ -36,7 +36,7 @@ const UpdateProfile = () => {
 
     }
     return (
-        <div className='lg:flex items-center bg-cyan-100 p-5 rounded-xl justify-around max-sm:mx-3'>
+        <div className='lg:flex items-center bg-cyan-100 p-5 rounded-xl justify-around max-sm:mx-3 md:mx-5 lg:mx-auto'>
             <Helmet>
                 <title>Update Profile</title>
             </Helmet>
@@ -49,7 +49,7 @@ const UpdateProfile = () => {
                 <div className='mt-3 font-poppins font-semibold text-center'>
                     <div><p><span className='text-lg'>Name:</span> {user.displayName}</p></div>
                     <div><p><span className='text-lg'>Email:</span> {user.email}</p></div>
-                    <div><p className='max-w-[400px]'><span className='text-lg'>URL:</span> <span>{user.photoURL}</span></p></div>
+                    <div><p className='lg:max-w-[400px] mx-auto'><span className='text-lg'>URL:</span> <span>{user.photoURL}</span></p></div>
                     
                 </div>
 

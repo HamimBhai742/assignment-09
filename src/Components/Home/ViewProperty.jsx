@@ -8,7 +8,7 @@ const ViewProperty = () => {
     const loderData = useLoaderData()
     const findData = loderData.find(r => r.id == clickId.id)
     console.log(loderData);
-    console.log(findData);
+    console.log(findData.status.charAt(0).toUpperCase()+findData.status.slice(1));
     const location = useLocation()
     console.log(location);
     return (
@@ -17,7 +17,7 @@ const ViewProperty = () => {
                 <title>View Property</title>
             </Helmet>
             <div className=" rounded-2xl">
-                <img className="rounded-xl h-[450px]" src={findData.img} alt="" />
+                <img className="rounded-xl md:h-[450px]" src={findData.img} alt="" />
             </div>
 
             <div className="max-w-[650px]">
@@ -28,6 +28,7 @@ const ViewProperty = () => {
                 <p className="font-poppins text-gray-500">{findData.description}</p>
                 <p className="font-poppins my-1"><span className="font-poppins font-bold">Location: </span> {findData.location}</p>
                 <p className="font-poppins my-1"><span className="font-poppins font-bold">Price: </span>{findData.price}</p>
+                <p className="font-poppins my-1"><span className="font-poppins font-bold">Status: </span>{findData.status.charAt(0).toUpperCase()+findData.status.slice(1)}</p>
                 <p className="font-poppins my-1"><span className="font-poppins font-bold">Area: </span>{findData.area}</p>
                 <span className="font-poppins font-bold">Facilities: </span>
                 <ul className="list-disc ml-12 font-poppins">

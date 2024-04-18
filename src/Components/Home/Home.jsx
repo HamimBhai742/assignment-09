@@ -1,5 +1,5 @@
 
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import Navbar from '../Navbar/Navbar';
 import IndustrialData from './IndustrialData';
 import { Helmet } from 'react-helmet-async';
@@ -26,12 +26,34 @@ const Home = () => {
             <Helmet>
                 <title>Home</title>
             </Helmet>
-            <div className="carousel w-full max-sm:h-[350px]  lg:h-[500px] rounded-3xl max-sm:mx-3 md:mx-5 lg:mx-auto">
+            <div className="carousel w-full max-sm:h-[350px]  lg:h-[500px] rounded-xl max-sm:mx-3 md:mx-5 lg:mx-auto">
                 <div id="slide1" className="carousel-item relative w-full">
                     <img src="https://www.prologis.com/sites/corporate/files/images/2017/03/Bratislava-DC8_10.jpg" className="w-full max-sm:h-[350px] h-[500px]" />
                     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                         <a href="#slide4" className="btn btn-circle">❮</a>
                         <a href="#slide2" className="btn btn-circle">❯</a>
+                    </div>
+                    <div className='absolute lg:left-44 top-16 space-y-5 md:left-16 left-10'>
+                        <h3 data-aos-duration="3000" data-aos='fade' className='font-poppins text-2xl md:text-5xl font-bold md:max-w-[450px] text-[#59C6D2] md:leading-[62px]'>Move to What Moves You.</h3>
+                        <p className='md:max-w-[650px] font-semibold text-white'>Real Estate develops and investe in high qulity real estate properties, project and companies that are shiping the urban fabric in dynamic cities around the world. It does so responsibly, with view to long itme perfomencr.</p>
+                        <div className='mt-5'>
+                            <Link to='/login' data-aos-duration="2000" data-aos='fade' className='btn animate-pulse bg-[#59C6D2] font-semibold text-white border-none font-roboto'>Login</Link >
+                            <button data-aos-duration="2000" data-aos='fade-zoom-in' className='btn animate-pulse bg-white ml-5 font-semibold text-black border-none font-roboto'>Learn more</button>
+                        </div>
+                        <div className='mt-5 flex gap-5 max-sm:hidden'>
+                            <div data-aos='fade-right' className='bg-white p-3 rounded-xl md:w-52 text-center animate-pulse'>
+                                <h3 className='text-3xl font-bold font-poppins'>2500+</h3>
+                                <h3 className='font-bold text-2xl font-poppins mt-2'>Happy Costumers</h3>
+                            </div>
+                            <div data-aos='fade-up' className='bg-white p-3 rounded-xl md:w-52 text-center animate-pulse'>
+                                <h3 className='text-3xl font-bold font-poppins'>2000+</h3>
+                                <h3 className='font-bold text-2xl font-poppins mt-2'>Property Ready</h3>
+                            </div>
+                            <div data-aos='fade-left' className='bg-white p-3 rounded-xl md:w-52 text-center animate-pulse'>
+                                <h3 className='text-3xl font-bold font-poppins'>100+</h3>
+                                <h3 className='font-bold text-2xl font-poppins mt-2'>Real Estate Agents</h3>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div id="slide2" className="carousel-item relative w-full">
@@ -39,6 +61,13 @@ const Home = () => {
                     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                         <a href="#slide1" className="btn btn-circle">❮</a>
                         <a href="#slide3" className="btn btn-circle">❯</a>
+                    </div>
+                    <div className='absolute text-center lg:left-80 md:top-28 md:left-36 left-6 top-1/3'>
+                        <h3 data-aos-duration="3000" data-aos='fade' className='font-poppins md:text-4xl md:max-w-[450px] lg:text-5xl font-bold lg:max-w-[550px] text-white md:leading-[62px] max-w-96'>Exploer the  Finest Real Estate Listings and Find Your Perfect Haven!</h3>
+                        <div className='mt-5'>
+                            <button data-aos-duration="2000" data-aos='fade' className='btn animate-pulse bg-purple-800 font-semibold text-white border-none font-poppins'>Get Started <FaArrowRight></FaArrowRight></button>
+                            <button data-aos-duration="2000" data-aos='fade-zoom-in' className='btn animate-pulse bg-white ml-5 font-semibold text-black border-none font-poppins'>Learn more</button>
+                        </div>
                     </div>
                 </div>
                 <div id="slide3" className="carousel-item relative w-full">
@@ -51,7 +80,7 @@ const Home = () => {
                 <div id="slide4" className="carousel-item relative w-full">
                     <div className='relative'>
                         <img src="https://realestatemarket.com.mx/images/2021/01-enero/1501/Industrial_Real_Estate-_En_el_norte_cerr_2020_con_alza_I___.jpg" className="lg:w-[1170px] max-sm:h-[350px] h-[500px]" />
-                        
+
                     </div>
                     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                         <a href="#slide3" className="btn btn-circle">❮</a>

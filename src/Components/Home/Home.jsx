@@ -33,7 +33,7 @@ const Home = () => {
                         <a href="#slide4" className="btn btn-circle">❮</a>
                         <a href="#slide2" className="btn btn-circle">❯</a>
                     </div>
-                    <div className='absolute lg:left-44 top-16 space-y-5 md:left-16 left-10'>
+                    <div className='absolute lg:left-44 top-10 space-y-5 md:left-16 left-10'>
                         <h3 data-aos-duration="3000" data-aos='fade' className='font-poppins text-2xl md:text-5xl font-bold md:max-w-[450px] text-[#59C6D2] md:leading-[62px]'>Move to What Moves You.</h3>
                         <p className='md:max-w-[650px] font-semibold text-white'>Real Estate develops and investe in high qulity real estate properties, project and companies that are shiping the urban fabric in dynamic cities around the world. It does so responsibly, with view to long itme perfomencr.</p>
                         <div className='mt-5'>
@@ -62,7 +62,7 @@ const Home = () => {
                         <a href="#slide1" className="btn btn-circle">❮</a>
                         <a href="#slide3" className="btn btn-circle">❯</a>
                     </div>
-                    <div className='absolute text-center lg:left-80 md:top-28 md:left-36 left-6 top-1/3'>
+                    <div className='absolute text-center lg:left-64 md:top-28 md:left-36 left-6 top-1/3'>
                         <h3 data-aos-duration="3000" data-aos='fade' className='font-poppins md:text-4xl md:max-w-[450px] lg:text-5xl font-bold lg:max-w-[550px] text-white md:leading-[62px] max-w-96'>Exploer the  Finest Real Estate Listings and Find Your Perfect Haven!</h3>
                         <div className='mt-5'>
                             <button data-aos-duration="2000" data-aos='fade' className='btn animate-pulse bg-purple-800 font-semibold text-white border-none font-poppins'>Get Started <FaArrowRight></FaArrowRight></button>
